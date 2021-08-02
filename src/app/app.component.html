@@ -1,1 +1,11 @@
+<div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between stretch" id="top-nav-container">
+  <div class="mat-title text-primary" [routerLink]="'/'">Customer</div>
+  <div fxFlex>&nbsp;</div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+    <button mat-raised-button [ngClass]="{'active': selected == 'customers'}"
+      (click)="routing('customers')">Customers</button>
+    <button mat-raised-button [ngClass]="{'active': selected == 'customerDetails'}"
+      (click)="routing('customerDetails')">Customer Details</button>
+  </div>
+</div>
 <router-outlet></router-outlet>

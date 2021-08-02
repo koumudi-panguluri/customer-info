@@ -1,2 +1,35 @@
-<p>customer-details works!</p>
-<router-outlet></router-outlet>
+<div fxLayout="row" fxLayoutAlign="start start" class="main-container mat-elevation-z2" *ngIf="selectedUser === ''">
+  <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="16px" *ngIf="users">
+    <div *ngFor="let user of users">
+      <div class="menu-item" (click)='userClick(user)'>
+        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="4px">
+          <div class="mat-body-2 menu-item-name" *ngIf="user?.username">{{user?.username}}</div>
+          <div class="mat-caption menu-item-name" *ngIf="user?.phone">Phone : {{user?.phone}}</div>
+          <div class="mat-caption menu-item-name" *ngIf="user?.email">Email : {{user?.email}}</div>
+          <div class="mat-subheading-1 menu-item-name" *ngIf="user?.address?.city">{{user?.address?.city}} |
+            <span *ngIf="user?.address?.zipcode">{{user?.address?.zipcode}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="selectedUser!== ''">
+  <mat-horizontal-stepper #stepper *ngIf="users" [selectedIndex]="this.selectedIndex"
+    class="main-container mat-elevation-z2" (selectionChange)="stepperChange($event)">
+    <mat-step *ngFor="let user of users">
+      <div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="16px" *ngIf="selectedUser">
+        <div class="mat-title">Customer Details</div>
+        <div class="mat-subheading-1">Name : {{user?.username}}</div>
+        <div class="mat-caption">Phone : {{user?.phone}}</div>
+        <div class="mat-caption">Email : {{user?.email}}</div>
+        <div class="mat-body-1">Address : {{user?.address?.city}}</div>
+      </div>
+      <br />
+      <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="16px">
+        <button mat-raised-button matStepperPrevious color="warn" *ngIf="showBack">Back</button>
+        <button mat-raised-button matStepperNext color="primary" *ngIf="showNext">Next</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

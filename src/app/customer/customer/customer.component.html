@@ -1,2 +1,12 @@
-<p>customer works!</p>
+<div fxLayout="row" fxLayoutAlign="start start" class="main-container mat-elevation-z2">
+  <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="8px" *ngIf="customers$ | async as users">
+    <div *ngFor="let user of users">
+      <div class="menu-item" [ngClass]="{'active': selectedItem == user.username}" (click)='userClick(user)'>
+        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+          <div class="mat-body-2 menu-item-name">{{user?.username}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>

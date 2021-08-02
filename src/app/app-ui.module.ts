@@ -8,7 +8,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { NgModule } from "@angular/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatButtonModule } from "@angular/material/button";
-
+import { MatStepperModule } from "@angular/material/stepper";
 @NgModule({
   imports: [
     MatDividerModule,
@@ -19,7 +19,20 @@ import { MatButtonModule } from "@angular/material/button";
     MatTableModule,
     MatTabsModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatStepperModule
+  ],
+  exports: [
+    MatDividerModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatMenuModule,
+    MatTableModule,
+    MatTabsModule,
+    FlexLayoutModule,
+    MatButtonModule,
+    MatStepperModule
   ]
 })
 export class AppMaterialModule { }

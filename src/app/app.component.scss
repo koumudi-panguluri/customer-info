@@ -1,0 +1,13 @@
+#top-nav-container{
+  height: 60px;
+  width: 100vw;
+  padding: 8px;
+  background: #00779c;
+}
+
+.active{
+  border:1px solid rgb(204, 227, 247);
+  background-color: rgb(204, 227, 247);
+  border-radius:4px;
+  color: #000;
+}
