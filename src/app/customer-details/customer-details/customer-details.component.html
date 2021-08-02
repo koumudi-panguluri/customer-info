@@ -3,7 +3,7 @@
     <div *ngFor="let user of users">
       <div class="menu-item" (click)='userClick(user)'>
         <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="4px">
-          <div class="mat-body-2 menu-item-name" *ngIf="user?.username">{{user?.username}}</div>
+          <div class="mat-body-2 menu-item-name" *ngIf="user?.name">{{user?.name}}</div>
           <div class="mat-caption menu-item-name" *ngIf="user?.phone">Phone : {{user?.phone}}</div>
           <div class="mat-caption menu-item-name" *ngIf="user?.email">Email : {{user?.email}}</div>
           <div class="mat-subheading-1 menu-item-name" *ngIf="user?.address?.city">{{user?.address?.city}} |
@@ -20,7 +20,7 @@
     <mat-step *ngFor="let user of users">
       <div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="16px" *ngIf="selectedUser">
         <div class="mat-title">Customer Details</div>
-        <div class="mat-subheading-1">Name : {{user?.username}}</div>
+        <div class="mat-subheading-1">Name : {{user?.name}}</div>
         <div class="mat-caption">Phone : {{user?.phone}}</div>
         <div class="mat-caption">Email : {{user?.email}}</div>
         <div class="mat-body-1">Address : {{user?.address?.city}}</div>

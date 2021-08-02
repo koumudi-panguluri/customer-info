@@ -24,9 +24,9 @@ export class CustomerComponent implements OnInit {
     )
   }
   userClick(data: any) {
-    this.selectedItem = data?.username;
+    this.selectedItem = data?.name;
     console.log(this.selectedItem);
-    this.router.navigate(["customer", this.selectedItem], { queryParams: { name: data?.username, phone: data?.phone, email: data?.email, address: data?.address?.city } })
+    this.router.navigate(["customer", this.selectedItem], { queryParams: { name: data?.name, phone: data?.phone, email: data?.email, address: data?.address?.city } })
   }
 
 }
